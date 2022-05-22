@@ -29,7 +29,7 @@ export default async function handler(req, res) {
      */
     const checksum = await PaytmChecksum.generateSignature(
       JSON.stringify(paytmParams.body),
-      process.env.PAYTM_MKEY
+      process.env.NEXT_PUBLIC_PAYTM_MKEY
     )
       paytmParams.head = {
         signature: checksum,
